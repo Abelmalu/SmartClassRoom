@@ -1,0 +1,35 @@
+{% extends 'student/base/base.html' %}
+
+{% block title %}Result{% endblock title %}
+{% block nav_title %}{{ exam.examname }}{% endblock nav_title %}
+{% block url %}{% url 'student:index' %}{% endblock url %}
+{% block action %}Home{% endblock action %}
+
+{% block body %}
+    <div class="container-fluid my-2">
+        <h3 align="center">Score : {{ exam.score }}</h3>
+        <ol class="list-group">
+            {% for ques in quesn %}
+            <li class="list-group-item list-group-item-action my-1"><h6><i>{{ ques.question }}</i></h6>
+               &nbsp; <strong>A.</strong> {{ques.optionA}}<br>
+               &nbsp; <strong>B.</strong> {{ques.optionB}}<br>
+               &nbsp; <strong>C.</strong> {{ques.optionC}}<br>
+               &nbsp; <strong>D.</strong> {{ques.optionD}}<br>
+            <hr>
+
+            {% if ques.choice != 'E' %}
+            <a>Selected Option - {{ques.choice}}</a><br>
+            {% endif %}
+            <a>Correct answer - {{ques.answer}}</a><br>
+            {% if ques.choice == ques.answer and ques.choice != 'E' %}
+            <a>Status: Correct</a><br>
+            {% elif ques.choice == 'E' %}
+            <a>Status: Not attempted</a><br>
+            {% else %}
+            <a>Status: Wrong</a><br>
+            {% endif %}
+            </li>
+            {% endfor %}
+        </ol>
+    </div>
+{% endblock body %}

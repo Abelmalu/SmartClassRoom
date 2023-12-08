@@ -1,0 +1,29 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+asgiref = "==3.3.1"
+django = "==3.1.13"
+django-crispy-forms = "==1.9.2"
+pytz = "==2020.4"
+sqlparse = "==0.4.1"
+djangorestframework = "*"
+gunicorn = "*"
+django-heroku = "*"
+cmake = "==3.18.4.post1"
+dlib = {path = "C:/Users/Abel/Desktop/Install-dlib-main/dlib-19.19.0-cp38-cp38-win_amd64.whl"}
+face-recognition = "*"
+click = "==7.1.2"
+numpy = "==1.19.3"
+opencv-python = "==4.4.0.46"
+pillow = "==8.0.1"
+playsound = "==1.2.2"
+django-jazzmin = "*"
+mysqlclient = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.8"
