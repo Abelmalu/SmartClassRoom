@@ -57,8 +57,8 @@
                     {% endfor%}
                 </tbody>
             </table>
-            <a href="{% url 'reset' %}"><button type="button" class="btn btn-outline-secondary">Reset</button></a>
-            <a href="{% url 'index' %}"><button type="button" class="btn btn-outline-primary">Refresh</button></a>
+            <a href="{% url 'attendance:reset' %}"><button type="button" class="btn btn-outline-secondary">Reset</button></a>
+            <a href="{% url 'attendance:index' %}"><button type="button" class="btn btn-outline-primary">Refresh</button></a>
 
         </div>
 
@@ -106,7 +106,7 @@
                     {% endfor%}
                 </tbody>
             </table>
-            <a href="{% url 'clear_history' %}"><button type="button" class="btn btn-outline-secondary">Clear History</button></a>
+            <a href="{% url 'attendance:clear_history' %}"><button type="button" class="btn btn-outline-secondary">Clear History</button></a>
         </div>
     </div>
 
@@ -115,7 +115,7 @@
     $(".scan").click(function () {
         var postData = { csrfmiddlewaretoken: '{{ csrf_token }}' }
         $.ajax({
-            url: "{% url 'scan' %}",
+            url: "{% url 'attendance:scan' %}",
             data: {
 
             },

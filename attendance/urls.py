@@ -1,7 +1,7 @@
 from django.urls import path,include
 from .views import *
 
-# app_name='attendance'
+app_name='attendance'
 urlpatterns = [
     path('', index, name= 'index'),
     path('ajax/', ajax, name= 'ajax'),
